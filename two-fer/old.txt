@@ -1,0 +1,10 @@
+=== RUN   TestShareWith
+--- PASS: TestShareWith (0.00s)
+=== RUN   ExampleShareWith
+--- PASS: ExampleShareWith (0.00s)
+goos: darwin
+goarch: amd64
+pkg: twofer
+BenchmarkShareWith-6   	 1768598	       680 ns/op	     288 B/op	      11 allocs/op
+PASS
+ok  	twofer	2.312s

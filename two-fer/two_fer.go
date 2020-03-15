@@ -2,7 +2,6 @@
 package twofer
 
 import (
-	"fmt"
 	"strings"
 )
 
@@ -11,7 +10,7 @@ func ShareWith(name string) string {
 	if isBlank(name) {
 		name = "you"
 	}
-	return fmt.Sprintf("One for %v, one for me.", name)
+	return "One for " + name + ", one for me."
 }
 
 func isBlank(s string) bool {
