@@ -8,7 +8,7 @@ func Proverb(rhyme []string) []string {
 	}
 
 	proverb := make([]string, 0, len(rhyme))
-	for i := 0; i < len(rhyme)-1; i += 1 {
+	for i := 0; i < len(rhyme)-1; i++ {
 		str := "For want of a " + rhyme[i] + " the " + rhyme[i+1] + " was lost."
 		proverb = append(proverb, str)
 	}

@@ -1,9 +1,12 @@
 package space
 
+// EarthAgeSeconds is Earth orbital period in seconds
 const EarthAgeSeconds = 31557600
 
+// Planet is string representation of Sun system planets.
 type Planet string
 
+// Age returns someone age on other Sum system planet.
 func Age(seconds float64, planet Planet) float64 {
 	earthAge := earthAgeOnPlanet(planet)
 	return seconds / (earthAge * EarthAgeSeconds)
