@@ -1,10 +1,7 @@
 // Package raindrops provides number conversion tool.
 package raindrops
 
-import (
-	"strconv"
-	"strings"
-)
+import "strconv"
 
 // Convert returns string by rules for number:
 // number has 3 as a factor, add 'Pling' to the result.
@@ -13,18 +10,18 @@ import (
 // number does not have any of 3, 5, or 7 as a factor,
 // the result should be the digits of the number.
 func Convert(a int) string {
-	b := strings.Builder{}
+	var b string
 	if a%3 == 0 {
-		b.WriteString("Pling")
+		b += "Pling"
 	}
 	if a%5 == 0 {
-		b.WriteString("Plang")
+		b += "Plang"
 	}
 	if a%7 == 0 {
-		b.WriteString("Plong")
+		b += "Plong"
 	}
-	if b.Len() == 0 {
+	if len(b) == 0 {
 		return strconv.Itoa(a)
 	}
-	return b.String()
+	return b
 }
