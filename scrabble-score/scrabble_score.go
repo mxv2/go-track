@@ -12,33 +12,27 @@ import "strings"
 // J, X                         - 8
 // Q, Z                         - 10
 func Score(word string) int {
-	letters := []rune(strings.ToLower(word))
+	letters := strings.ToLower(word)
 
 	score := 0
 	for _, l := range letters {
-		score += scoreLetter(l)
+		switch l {
+		case 'a', 'e', 'i', 'o', 'u', 'l', 'n', 'r', 's', 't':
+			score++
+		case 'd', 'g':
+			score += 2
+		case 'b', 'c', 'm', 'p':
+			score += 3
+		case 'f', 'h', 'v', 'w', 'y':
+			score += 4
+		case 'k':
+			score += 5
+		case 'j', 'x':
+			score += 8
+		case 'q', 'z':
+			score += 10
+		}
 	}
 
 	return score
-}
-
-func scoreLetter(l rune) int {
-	switch l {
-	case 'a', 'e', 'i', 'o', 'u', 'l', 'n', 'r', 's', 't':
-		return 1
-	case 'd', 'g':
-		return 2
-	case 'b', 'c', 'm', 'p':
-		return 3
-	case 'f', 'h', 'v', 'w', 'y':
-		return 4
-	case 'k':
-		return 5
-	case 'j', 'x':
-		return 8
-	case 'q', 'z':
-		return 10
-	default:
-		return 0
-	}
 }
