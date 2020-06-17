@@ -10,18 +10,19 @@ func IsIsogram(word string) bool {
 		return true
 	}
 
-	letters := make(map[rune]struct{})
+	var letterBits int32
 	for _, l := range word {
 		if unicode.IsSpace(l) || l == '-' {
 			continue
 		}
 
-		l = unicode.ToLower(l)
-		if _, ok := letters[l]; ok {
+		l = unicode.ToLower(l) - 'a'
+		bit := int32(1 << l)
+		if letterBits&bit > 0 {
 			return false
 		}
 
-		letters[l] = struct{}{}
+		letterBits |= bit
 	}
 
 	return true
