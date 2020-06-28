@@ -74,4 +74,14 @@ var testCases = []struct {
 		input:       "angola",
 		expected:    false,
 	},
+	{
+		description: "isogram with miscellaneous unicode letters",
+		input:       "uõȿɟ",
+		expected:    true,
+	},
+	{
+		description: "isogram with miscellaneous unicode capital letters",
+		input:       "čabcČ",
+		expected:    true,
+	},
 }
