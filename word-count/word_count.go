@@ -1,3 +1,4 @@
+// Package wordcount provides word counting function in text.
 package wordcount
 
 import (
@@ -5,8 +6,12 @@ import (
 	"unicode"
 )
 
+// Frequency is a storage, which counts strings in a case-insensitive way.
 type Frequency map[string]int
 
+// WordCount counts frequency of occurrences words in input.
+// Word is a number (1234), simple string (ABCD) or with apostrophe.
+// Quoted words are ignored.
 func WordCount(input string) Frequency {
 	freq := make(map[string]int)
 
