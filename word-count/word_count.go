@@ -13,7 +13,7 @@ type Frequency map[string]int
 // Word is a number (1234), simple string (ABCD) or with apostrophe.
 // Quoted words are ignored.
 func WordCount(input string) Frequency {
-	freq := make(map[string]int)
+	freq := make(Frequency)
 
 	wordStartIndex := -1
 	for peakIndex, r := range input {
@@ -40,9 +40,5 @@ func WordCount(input string) Frequency {
 
 func countWord(freq Frequency, word string) {
 	word = strings.ToLower(strings.Trim(word, "'"))
-
-	if _, ok := freq[word]; !ok {
-		freq[word] = 0
-	}
 	freq[word]++
 }
